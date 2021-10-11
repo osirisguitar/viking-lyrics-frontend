@@ -1,1 +1,1 @@
-# viking-lyrics-frontend
+# Viking Lyrics Web
