@@ -4,8 +4,9 @@
     <meta name="description" content="The Artificial Viking Metal Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has
     been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.">
     <meta property="og:image" content="http://vikinglyrics.heavymetalcoder.com/images/viking_by_thompson46-d58200i.jpg">
-    <title>Artificial Viking Metal Minstrel</title>
+    <title>Artificial Viking Metal Minstrel 2.0</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <link rel="icon" href="images/favicon.png" type="image/png">
     <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC"
   rel="stylesheet">
     <style>
@@ -24,6 +25,7 @@
         padding: 40px;
         background-color: white;
         opacity: 0.9;
+        position: relative;
       }
 
       #container {
@@ -61,9 +63,29 @@
       }
 
       #loader {
-        position: fixed;
-        top: 100;
-        left: 100;
+        opacity: 0.95;
+        background-color: #ECE3C5;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        width: 400px;
+        height: 300px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 1000;
+        border: 2px black solid;
+        border-radius: 10px;
+        margin: 5px;
+      }
+
+      #loader div.first-child {
+        background-color: white;
+      }
+
+      #loader div {
+        position: relative;
       }
     </style>
     <script type="text/javascript" src="js/main.js">
@@ -89,13 +111,16 @@
           </p>
           <h3>About</h3>
           <p class="info">
-            The Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.
+            The Minstrel is machine learning service that has listened to viking and power metal, and likes to make its own songs. It has been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.
           </p>
           <p class="info">
-            The Minstrel was created by Anders Norrback Bornholm, also sometimes known as <a target="_blank" href="https://www.heavymetalcoder.com">Heavy Metal Coder</a> and <a target="_blank" href="https://www.osirisguitar.com">OSIRIS GUITAR</a>.
+            The Minstrel was created by Anders Norrback Bornholm, also sometimes known as <a target="_blank" href="https://metalcoder.dev">Heavy Metal Coder</a> and <a target="_blank" href="https://www.osirisguitar.com">OSIRIS GUITAR</a>.
           </p>
           <p class="info">
             Background image by <a target="_blank" href="http://www.thomaswievegg.com/">Thomas Wievegg</a>
+          </p>
+          <p class="info">
+            Training on lyrics crawled from <a target="_blank" href="http://www.darklyrics.com/">Dark Lyrics</a>
           </p>
         </div>
         <div class="lyrics">
@@ -105,7 +130,10 @@
         </div>
       </div>
       <div id="loader">
-        LOADING!
+        <div>
+          <h2>Composing...</h2>
+          <div>Estimated time remaining: <span id="counter"></span></div>
+        </div>
       </div>
     </div>
   </body>
