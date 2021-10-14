@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="description" content="The Artificial Viking Metal Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has
+    been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.">
+    <meta property="og:image" content="http://vikinglyrics.heavymetalcoder.com/images/viking_by_thompson46-d58200i.jpg">
+    <title>Artificial Viking Metal Minstrel</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn+SC"
+  rel="stylesheet">
+    <style>
+      body {
+        background-image: url('images/viking_by_thompson46-d58200i.jpg');
+        background-size: cover;
+        font-family: 'Vollkorn SC', serif;
+      }
+
+      h1 {
+        font-size: 2.5em;
+      }
+
+      #main {
+        margin: 20px;
+        padding: 40px;
+        background-color: white;
+        opacity: 0.9;
+      }
+
+      #container {
+        display: flex;
+      }
+
+      #settings {
+        width: 40%;
+        max-width: 400px;
+        padding-right: 25px;
+      }
+
+      .lyrics {
+        padding-left: 25px;
+        border-left: 1px solid black;
+      }
+
+      .info {
+        font-size: 80%;
+      }
+
+      input, button {
+        font-family: 'Vollkorn SC', serif;
+        font-size: 1em;
+      }
+
+      #start {
+        width: 95%;
+      }
+
+      button {
+        border-radius: 0px;
+        padding: 10px;
+        margin-top: 10px;
+      }
+
+      #loader {
+        position: fixed;
+        top: 100;
+        left: 100;
+      }
+    </style>
+    <script type="text/javascript" src="js/main.js">
+    </script>
+  </head>
+  <body onLoad="intialize()">
+    <div id="main">
+      <h1>Artificial Viking Metal Minstrel</h1>
+      <div id="container">
+        <div id="settings">
+          <h3>Brain</h3>
+          <p class="info">
+            <input type="radio" name="model" value="gpt2" id="gpt2" checked> <b>GPT2</b> - very smart, humanlike, can keep a common thread over longer sections of text. But also very slow (expect ~ 90s generation time).<br>
+            <input type="radio" name="model" value="torchrnn" id="torchrnn"> <b></b>TorchRNN</b> - very fast, creative, invents new words in the style it was trained. But not good with context.<br>
+          </p>
+          <h3>Mead Level</h3>
+          <p class="info">More mead makes the minstrel more creative, innovating its own words and such</p>
+          <input type="number" min="1" max="100" id="temperature" value="50">%
+          <h3>Song Title</h3>
+          <p>
+          <input type="text" id="start"><br>
+          <button onClick="loadLyrics()">Create new song</button>
+          </p>
+          <h3>About</h3>
+          <p class="info">
+            The Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.
+          </p>
+          <p class="info">
+            The Minstrel was created by Anders Norrback Bornholm, also sometimes known as <a target="_blank" href="https://www.heavymetalcoder.com">Heavy Metal Coder</a> and <a target="_blank" href="https://www.osirisguitar.com">OSIRIS GUITAR</a>.
+          </p>
+          <p class="info">
+            Background image by <a target="_blank" href="http://www.thomaswievegg.com/">Thomas Wievegg</a>
+          </p>
+        </div>
+        <div class="lyrics">
+          <h2 id="title"></h2>
+          <p id="lyrics">
+          </p>
+        </div>
+      </div>
+      <div id="loader">
+        LOADING!
+      </div>
+    </div>
+  </body>
+</html>

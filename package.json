@@ -1,0 +1,29 @@
+{
+  "name": "viking-lyrics-frontend",
+  "version": "1.0.0",
+  "description": "New frontend for viking lyrics AI",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "type": "module",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/osirisguitar/viking-lyrics-frontend.git"
+  },
+  "author": "Anders Norrback Bornholm",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/osirisguitar/viking-lyrics-frontend/issues"
+  },
+  "homepage": "https://github.com/osirisguitar/viking-lyrics-frontend#readme",
+  "dependencies": {
+    "@koa/router": "^10.1.1",
+    "axios": "^0.22.0",
+    "koa": "^2.13.3",
+    "koa-better-serve": "^2.0.7",
+    "koa-bodyparser": "^4.3.0",
+    "koa-mount": "^4.0.0",
+    "koa-static": "^5.0.0"
+  }
+}
