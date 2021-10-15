@@ -25,22 +25,34 @@
         padding: 40px;
         background-color: white;
         opacity: 0.9;
-        position: relative;
       }
 
       #container {
         display: flex;
+        flex-direction: column;
       }
 
-      #settings {
-        width: 40%;
-        max-width: 400px;
+      #settings, #settings2 {
+        width: 35%;
+        max-width: 350px;
         padding-right: 25px;
       }
 
+      #settings {
+        order: 1;
+      }
+
+      #settings2 {
+        order: 2;
+        min-height: 500px;
+      }
+
       .lyrics {
+        order: 3;
         padding-left: 25px;
         border-left: 1px solid black;
+        position: absolute;
+        left: 450px;
       }
 
       .info {
@@ -87,6 +99,28 @@
       #loader div {
         position: relative;
       }
+
+      @media screen and (max-width: 1000px) {
+        #settings {
+          order: 1;
+        }
+
+        .lyrics {
+          order: 2;
+          position: unset;
+          padding-left: 0px;
+          border-left: none;
+        }
+
+        #settings2 {
+          order: 3;
+        }
+
+        #settings, #settings2 {
+          width: 100%;
+          max-width: 100%;
+        }
+      }
     </style>
     <script type="text/javascript" src="js/main.js">
     </script>
@@ -109,6 +143,13 @@
           <input type="text" id="start"><br>
           <button onClick="loadLyrics()">Create new song</button>
           </p>
+        </div>
+        <div class="lyrics">
+          <h2 id="title"></h2>
+          <p id="lyrics">
+          </p>
+        </div>
+        <div id="settings2">
           <h3>About</h3>
           <p class="info">
             The Minstrel is machine learning service that has listened to viking and power metal, and likes to make its own songs. It has been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.
@@ -121,11 +162,6 @@
           </p>
           <p class="info">
             Training on lyrics crawled from <a target="_blank" href="http://www.darklyrics.com/">Dark Lyrics</a>
-          </p>
-        </div>
-        <div class="lyrics">
-          <h2 id="title"></h2>
-          <p id="lyrics">
           </p>
         </div>
       </div>
