@@ -4,6 +4,7 @@
     <meta name="description" content="The Artificial Viking Metal Minstrel is a recurrent neural network that listens to viking and power metal, and likes to make its own songs. It has
     been listening to bands like Amon Amarth, Ensiferum, Enslaved, Grand Magus, Rhapsody, Unleashed and Manowar.">
     <meta property="og:image" content="http://vikinglyrics.heavymetalcoder.com/images/viking_by_thompson46-d58200i.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Artificial Viking Metal Minstrel 2.0</title>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js"></script>
     <link rel="icon" href="images/favicon.png" type="image/png">
@@ -101,6 +102,15 @@
       }
 
       @media screen and (max-width: 1000px) {
+        h1 {
+          font-size: 2em;
+        }
+
+        #main {
+          margin: 0px;
+          padding: 20px;
+        }
+
         #settings {
           order: 1;
         }
@@ -132,11 +142,11 @@
         <div id="settings">
           <h3>Brain</h3>
           <p class="info">
-            <input type="radio" name="model" value="gpt2" id="gpt2" checked> <b>GPT2</b> - very smart, humanlike, can keep a common thread over longer sections of text. But also very slow (expect ~ 90s generation time).<br>
-            <input type="radio" name="model" value="torchrnn" id="torchrnn"> <b></b>TorchRNN</b> - very fast, creative, invents new words in the style it was trained. But not good with context.<br>
+            <input type="radio" name="model" value="gpt2" id="gpt2" checked> <b>GPT2</b> - very smart, humanlike, can keep a common thread. Slow (45 s per song).<br>
+            <input type="radio" name="model" value="torchrnn" id="torchrnn"> <b>TorchRNN</b> - very fast, creative, invents new words. Bad at context.<br>
           </p>
           <h3>Mead Level</h3>
-          <p class="info">More mead makes the minstrel more creative, innovating its own words and such</p>
+          <p class="info">More mead increases creativity, innovating new words and such</p>
           <input type="number" min="1" max="100" id="temperature" value="50">%
           <h3>Song Title</h3>
           <p>
